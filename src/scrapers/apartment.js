@@ -21,6 +21,11 @@ const scrapAddress = (addressBlock) => {
         result.address = splittedAddressBlock[0];
         result.postalCode = addressRegex ? addressRegex[1] : null;
         result.city = addressRegex ? addressRegex[2] : null;
+    } else if (splittedAddressBlock.length === 1) {
+        const addressRegex = /(\d{5}) (\S+)/.exec(splittedAddressBlock[0]);
+
+        result.postalCode = addressRegex ? addressRegex[1] : null;
+        result.city = addressRegex ? addressRegex[2] : null;
     }
 
     return result;

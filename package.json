@@ -1,0 +1,29 @@
+{
+  "name": "immobilienscout24-scraper",
+  "version": "1.0.0",
+  "description": "Web scrapper for the immobilienscout24 apartment listing",
+  "main": "src/index.js",
+  "scripts": {
+    "test": "jest"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/fedebertolini/immobilienscout24-scraper.git"
+  },
+  "dependencies": {
+    "cheerio": "^0.22.0",
+    "request": "^2.79.0"
+  },
+  "devDependencies": {
+    "eslint": "^3.15.0",
+    "eslint-config-airbnb-base": "^11.1.0",
+    "eslint-plugin-import": "^2.2.0",
+    "jest": "^18.1.0"
+  },
+  "author": "Federico Bertolini",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/fedebertolini/immobilienscout24-scraper/issues"
+  },
+  "homepage": "https://github.com/fedebertolini/immobilienscout24-scraper#readme"
+}

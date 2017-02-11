@@ -16,7 +16,7 @@ const getListUrl = (city, page) => {
     return `${host}/wohnen/${cityPath}/mietwohnungen,seite-${page}.html`;
 };
 
-const scrapApartment = (url) => new Promise((resolve, reject) => {
+const scrapApartment = url => new Promise((resolve, reject) => {
     request(url, (error, response, body) => {
         if (error) {
             reject(error);
@@ -35,7 +35,7 @@ const scrapCity = (city, page = 1) => new Promise((resolve, reject) => {
     let url;
     try {
         url = getListUrl(city, page);
-    } catch(e) {
+    } catch (e) {
         reject(e);
         return;
     }
@@ -50,12 +50,10 @@ const scrapCity = (city, page = 1) => new Promise((resolve, reject) => {
         const apartments = listScraper.scrap(body);
         const apartmentPromises = apartments.items.map(apartment => scrapApartment(apartment.url));
 
-        resolve(Promise.all(apartmentPromises).then((items) => {
-            return {
-                items,
-                pagination: apartments.pagination,
-            };
-        }));
+        resolve(Promise.all(apartmentPromises).then(items => ({
+            items,
+            pagination: apartments.pagination,
+        })));
     });
 });
 

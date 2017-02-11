@@ -14,6 +14,17 @@ it('scraps the first page of the Berlin apartment list and its apartments', () =
     return promise.then((result) => {
         expect(Array.isArray(result.items)).toBe(true);
         expect(result.items.length).toBe(12);
+        expect(result.pagination.page).toBe(1);
+        expect(result.pagination.totalPages).toBeGreaterThan(100);
+
+        result.items.forEach((apartment) => {
+            expect(apartment.rentBase).toBeGreaterThan(200);
+            expect(apartment.rentTotal).toBeGreaterThan(200);
+            expect(apartment.area).toBeGreaterThan(15);
+            expect(apartment.rooms).toBeGreaterThan(0);
+            expect(apartment.postalCode).toBeTruthy();
+            expect(apartment.city).toBe('Berlin');
+        });
     });
 });
 
@@ -24,5 +35,16 @@ it('scraps the second page of the Berlin apartment list and its apartments', () 
     return promise.then((result) => {
         expect(Array.isArray(result.items)).toBe(true);
         expect(result.items.length).toBe(12);
+        expect(result.pagination.page).toBe(2);
+        expect(result.pagination.totalPages).toBeGreaterThan(100);
+
+        result.items.forEach((apartment) => {
+            expect(apartment.rentBase).toBeGreaterThan(200);
+            expect(apartment.rentTotal).toBeGreaterThan(200);
+            expect(apartment.area).toBeGreaterThan(15);
+            expect(apartment.rooms).toBeGreaterThan(0);
+            expect(apartment.postalCode).toBeTruthy();
+            expect(apartment.city).toBe('Berlin');
+        });
     });
 });

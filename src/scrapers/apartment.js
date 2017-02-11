@@ -38,6 +38,7 @@ exports.scrap = (page) => {
     apartment.rentTotal = parsePrice($('.is24qa-gesamtmiete').text());
     apartment.rentAdditionalCosts = parsePrice($('.is24qa-nebenkosten').text());
     apartment.area = parseArea($('.is24qa-wohnflaeche-ca').text().replace(',', '.'));
+    apartment.rooms = parseInt($('.is24qa-zi').text(), 10);
 
     const addressBlock = $('h4 .address-block [data-ng-non-bindable]');
     if (addressBlock && addressBlock.text().trim()) {

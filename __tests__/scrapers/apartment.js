@@ -9,6 +9,7 @@ it('scraps the apartment1.html', () => {
     expect(apartment.rentTotal).toBe(789);
     expect(apartment.rentAdditionalCosts).toBe(120);
     expect(apartment.area).toBe(57.62);
+    expect(apartment.rooms).toBe(2);
     expect(apartment.address).toBe('Czarnikauer Straße 8a');
     expect(apartment.postalCode).toBe('10439');
     expect(apartment.city).toBe('Berlin');

@@ -6,7 +6,7 @@ const cityPaths = require('./cityPaths.json');
 const host = 'https://www.immobilienscout24.de';
 
 const getListUrl = (city, page) => {
-    const cityPath = cityPaths[city.toLowerCase()];
+    const cityPath = cityPaths[city];
     if (!cityPath) {
         throw new Error(`Invalid city: ${city}`);
     }

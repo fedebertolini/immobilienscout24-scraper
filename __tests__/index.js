@@ -28,15 +28,15 @@ it('scraps the first page of the Berlin apartment list and its apartments', () =
     });
 });
 
-it('scraps the second page of the Berlin apartment list and its apartments', () => {
-    const promise = index.scrapCity('Berlin', 2);
+it('scraps the second page of the Köln apartment list and its apartments', () => {
+    const promise = index.scrapCity('Köln', 2);
     expect(promise instanceof Promise).toBe(true);
 
     return promise.then((result) => {
         expect(Array.isArray(result.items)).toBe(true);
         expect(result.items.length).toBe(12);
         expect(result.pagination.page).toBe(2);
-        expect(result.pagination.totalPages).toBeGreaterThan(100);
+        expect(result.pagination.totalPages).toBeGreaterThan(30);
 
         result.items.forEach((apartment) => {
             expect(apartment.rentBase).toBeGreaterThan(200);
@@ -44,7 +44,6 @@ it('scraps the second page of the Berlin apartment list and its apartments', () 
             expect(apartment.area).toBeGreaterThan(15);
             expect(apartment.rooms).toBeGreaterThan(0);
             expect(apartment.postalCode).toBeTruthy();
-            expect(apartment.city).toBe('Berlin');
         });
     });
 });

@@ -1,3 +1,22 @@
 {
-    "berlin": "berlin,berlin"
+    "Berlin": "berlin,berlin",
+    "Bonn": "nordrhein-westfalen,bonn",
+    "Bremen": "bremen,bremen",
+    "Chemnitz": "sachsen,chemnitz",
+    "Dortmund": "nordrhein-westfalen,dortmund",
+    "Dresden": "sachsen,dresden",
+    "Duisburg": "nordrhein-westfalen,duisburg",
+    "Düsseldorf": "nordrhein-westfalen,duesseldorf",
+    "Essen": "nordrhein-westfalen,essen",
+    "Frankfurt": "hessen,frankfurt-am-main",
+    "Gelsenkirchen": "nordrhein-westfalen,gelsenkirchen",
+    "Hamburg": "hamburg,hamburg",
+    "Hannover": "niedersachsen,hannover",
+    "Köln": "nordrhein-westfalen,koeln",
+    "Leipzig": "sachsen,leipzig",
+    "München": "bayern,muenchen",
+    "Mönchengladbach": "nordrhein-westfalen,moenchengladbach",
+    "Nürnberg": "bayern,nuernberg",
+    "Stuttgart": "baden-wuerttemberg,stuttgart",
+    "Wuppertal": "nordrhein-westfalen,wuppertal"
 }

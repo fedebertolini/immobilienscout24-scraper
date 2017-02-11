@@ -35,6 +35,6 @@ exports.scrap = (page) => {
 
     return {
         items: apartments,
-        pagination: pagination,
+        pagination,
     };
 };

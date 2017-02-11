@@ -4,7 +4,8 @@
   "description": "Web scrapper for the immobilienscout24 apartment listing",
   "main": "src/index.js",
   "scripts": {
-    "test": "jest"
+    "test": "jest",
+    "lint": "eslint src __tests__"
   },
   "repository": {
     "type": "git",

@@ -1,0 +1,19 @@
+{
+    "extends": [
+        "eslint:recommended",
+        "airbnb-base"
+    ],
+    "rules": {
+        "indent": [2, 4],
+        "no-plusplus": ["error", { "allowForLoopAfterthoughts": true }]
+    },
+    "globals": {
+        "require": true,
+        "console": true,
+        "expect": true,
+        "beforeAll": true,
+        "test": true,
+        "it": true,
+        "afterEach": true,
+    }
+}

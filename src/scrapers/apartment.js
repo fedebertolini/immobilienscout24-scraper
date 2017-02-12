@@ -54,7 +54,6 @@ exports.scrap = (page) => {
 
     apartment.rentBase = parsePrice($('.is24qa-kaltmiete').text());
     apartment.rentTotal = parsePrice($('.is24qa-gesamtmiete').text());
-    apartment.rentAdditionalCosts = parsePrice($('.is24qa-nebenkosten').text());
     apartment.area = parseArea($('.is24qa-wohnflaeche-ca').text().replace(',', '.'));
     apartment.rooms = parseInt($('.is24qa-zi').text(), 10);
     apartment.availableFrom = parseAvailableFrom($('.is24qa-bezugsfrei-ab').text());

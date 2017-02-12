@@ -7,7 +7,6 @@ it('scraps the apartment1.html', () => {
 
     expect(apartment.rentBase).toBe(669);
     expect(apartment.rentTotal).toBe(789);
-    expect(apartment.rentAdditionalCosts).toBe(120);
     expect(apartment.area).toBe(57.62);
     expect(apartment.rooms).toBe(2);
     expect(apartment.address).toBe('Czarnikauer Straße 8a');
@@ -22,7 +21,6 @@ it('scraps the apartment2.html', () => {
 
     expect(apartment.rentBase).toBe(826);
     expect(apartment.rentTotal).toBe(930.80);
-    expect(apartment.rentAdditionalCosts).toBe(67.80);
     expect(apartment.area).toBe(59);
     expect(apartment.rooms).toBe(2);
     expect(apartment.address).toBe('Wilmsstraße 17');

@@ -4,7 +4,7 @@ it('exports the list of available cities', () => {
     const cities = index.cities;
 
     expect(Array.isArray(cities)).toBe(true);
-    expect(cities.length).toBeGreaterThan(0);
+    expect(cities.length).toBeGreaterThan(10);
 });
 
 it('scraps the first page of the Berlin apartment list and its apartments', () => {

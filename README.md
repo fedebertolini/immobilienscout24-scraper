@@ -59,7 +59,6 @@ Output:
     {
       rentBase:1119,
       rentTotal:1396.05,
-      rentAdditionalCosts:277.05,
       area:110.75,
       rooms:3,
       address:'Jugendweg 11',
@@ -70,7 +69,6 @@ Output:
     {
       rentBase:1690,
       rentTotal:1690,
-      rentAdditionalCosts:0,
       area:34,
       rooms:2,
       address:'Otto-Braun Strasse 67',
@@ -81,7 +79,6 @@ Output:
     {
       rentBase:906,
       rentTotal:1103.4,
-      rentAdditionalCosts:197.4,
       area:56.79,
       rooms:2,
       address:'Hallesche Straße 8',

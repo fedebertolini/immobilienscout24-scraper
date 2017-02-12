@@ -31,6 +31,19 @@ const scrapAddress = (addressBlock) => {
     return result;
 };
 
+const parseAvailableFrom = (text) => {
+    if (text) {
+        const dateRegex = /^\D+(\d{1,2}\.\d{1,2}\.\d{4})\s*$/.exec(text);
+        if (dateRegex) {
+            const dateStr = dateRegex[1].split('.').reverse().join('-');
+            return new Date(dateStr);
+        } else if (text.trim() === 'sofort') {
+            return true;
+        }
+    }
+    return null;
+};
+
 exports.scrap = (page) => {
     const $ = cheerio.load(page, {
         decodeEntities: false,
@@ -44,6 +57,7 @@ exports.scrap = (page) => {
     apartment.rentAdditionalCosts = parsePrice($('.is24qa-nebenkosten').text());
     apartment.area = parseArea($('.is24qa-wohnflaeche-ca').text().replace(',', '.'));
     apartment.rooms = parseInt($('.is24qa-zi').text(), 10);
+    apartment.availableFrom = parseAvailableFrom($('.is24qa-bezugsfrei-ab').text());
 
     const addressBlock = $('h4 .address-block [data-ng-non-bindable]');
     if (addressBlock && addressBlock.text().trim()) {

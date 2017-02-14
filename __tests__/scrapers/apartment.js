@@ -5,6 +5,7 @@ it('scraps the apartment1.html', () => {
     const file = fs.readFileSync(`${process.cwd()}/__tests__/scrapers/pages/apartment1.html`);
     const apartment = scraper.scrap(file);
 
+    expect(apartment.id).toBe('90961525');
     expect(apartment.rentBase).toBe(669);
     expect(apartment.rentTotal).toBe(789);
     expect(apartment.area).toBe(57.62);
@@ -19,6 +20,7 @@ it('scraps the apartment2.html', () => {
     const file = fs.readFileSync(`${process.cwd()}/__tests__/scrapers/pages/apartment2.html`);
     const apartment = scraper.scrap(file);
 
+    expect(apartment.id).toBe('93206243');
     expect(apartment.rentBase).toBe(826);
     expect(apartment.rentTotal).toBe(930.80);
     expect(apartment.area).toBe(59);

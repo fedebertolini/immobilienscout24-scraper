@@ -52,6 +52,7 @@ exports.scrap = (page) => {
 
     let apartment = {};
 
+    apartment.id = $('[name="exposeId"]').val();
     apartment.rentBase = parsePrice($('.is24qa-kaltmiete').text());
     apartment.rentTotal = parsePrice($('.is24qa-gesamtmiete').text());
     apartment.area = parseArea($('.is24qa-wohnflaeche-ca').text().replace(',', '.'));

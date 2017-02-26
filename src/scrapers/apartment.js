@@ -36,12 +36,22 @@ const parseAvailableFrom = (text) => {
         const dateRegex = /^\D+(\d{1,2}\.\d{1,2}\.\d{4})\s*$/.exec(text);
         if (dateRegex) {
             const dateStr = dateRegex[1].split('.').reverse().join('-');
-            return new Date(dateStr);
+            const date = new Date(dateStr);
+            return {
+                availableFrom: date,
+                isAvailable: date.getTime() < (new Date()).getTime(),
+            };
         } else if (text.trim() === 'sofort') {
-            return true;
+            return {
+                availableFrom: null,
+                isAvailable: true,
+            };
         }
     }
-    return null;
+    return {
+        availableFrom: null,
+        isAvailable: false,
+    };
 };
 
 exports.scrap = (page) => {
@@ -57,7 +67,9 @@ exports.scrap = (page) => {
     apartment.rentTotal = parsePrice($('.is24qa-gesamtmiete').text());
     apartment.area = parseArea($('.is24qa-wohnflaeche-ca').text().replace(',', '.'));
     apartment.rooms = parseInt($('.is24qa-zi').text(), 10);
-    apartment.availableFrom = parseAvailableFrom($('.is24qa-bezugsfrei-ab').text());
+
+    const availability = parseAvailableFrom($('.is24qa-bezugsfrei-ab').text());
+    apartment = Object.assign(apartment, availability);
 
     const addressBlock = $('h4 .address-block [data-ng-non-bindable]');
     if (addressBlock && addressBlock.text().trim()) {

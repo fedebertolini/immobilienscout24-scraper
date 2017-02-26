@@ -55,38 +55,43 @@ and an object with the pagination info.
 Output:
 ```
 {
-  items:[
-    {
-      rentBase:1119,
-      rentTotal:1396.05,
-      area:110.75,
-      rooms:3,
-      address:'Jugendweg 11',
-      postalCode:'13629',
-      city:'Berlin',
-      url:'https://www.immobilienscout24.de/expose/92780458'
-    },
-    {
-      rentBase:1690,
-      rentTotal:1690,
-      area:34,
-      rooms:2,
-      address:'Otto-Braun Strasse 67',
-      postalCode:'10178',
-      city:'Berlin',
-      url:'https://www.immobilienscout24.de/expose/79469862'
-    },
-    {
-      rentBase:906,
-      rentTotal:1103.4,
-      area:56.79,
-      rooms:2,
-      address:'Hallesche Straße 8',
-      postalCode:'10963',
-      city:'Berlin',
-      url:'https://www.immobilienscout24.de/expose/91655737'
-    }
-  ],
+  items:[{
+    id:'93219445',
+    rentBase:1712,
+    rentTotal:2134,
+    area:132,
+    rooms:4,
+    availableFrom:null,
+    isAvailable:true,
+    address:'Saargemünder Straße 25',
+    postalCode:'14195',
+    city:'Berlin',
+    url:'https://www.immobilienscout24.de/expose/93219445'
+  }, {
+    id:'92650974',
+    rentBase:2499,
+    rentTotal:2769,
+    area:161,
+    rooms:4,
+    availableFrom:2017-01-01T00:00:00.000Z,
+    isAvailable:true,
+    address:'Kurfürstendamm 131',
+    postalCode:'10711',
+    city:'Berlin',
+    url:'https://www.immobilienscout24.de/expose/92650974'
+  }, {
+    id:'91212520',
+    rentBase:1449,
+    rentTotal:1776.25,
+    area:130.9,
+    rooms:5,
+    availableFrom:2017-01-15T00:00:00.000Z,
+    isAvailable:true,
+    address:'Hauffstraße 1A',
+    postalCode:'10317',
+    city:'Berlin',
+    url:'https://www.immobilienscout24.de/expose/91212520'
+  }],
   pagination:{
     page:1,
     totalPages:352

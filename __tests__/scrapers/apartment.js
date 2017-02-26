@@ -13,7 +13,8 @@ it('scraps the apartment1.html', () => {
     expect(apartment.address).toBe('Czarnikauer Straße 8a');
     expect(apartment.postalCode).toBe('10439');
     expect(apartment.city).toBe('Berlin');
-    expect(apartment.availableFrom).toBe(true);
+    expect(apartment.availableFrom).toBeNull();
+    expect(apartment.isAvailable).toBe(true);
 });
 
 it('scraps the apartment2.html', () => {
@@ -29,4 +30,5 @@ it('scraps the apartment2.html', () => {
     expect(apartment.postalCode).toBe('10961');
     expect(apartment.city).toBe('Berlin');
     expect(apartment.availableFrom).toEqual(new Date('2017-04-01'));
+    expect(apartment.isAvailable).toBe(false);
 });

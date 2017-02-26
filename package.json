@@ -1,6 +1,6 @@
 {
   "name": "immobilienscout24-scraper",
-  "version": "1.0.2",
+  "version": "1.0.3",
   "description": "Web scrapper for the immobilienscout24 apartment listing",
   "main": "src/index.js",
   "scripts": {

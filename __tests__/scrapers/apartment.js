@@ -15,6 +15,14 @@ it('scraps the apartment1.html', () => {
     expect(apartment.city).toBe('Berlin');
     expect(apartment.availableFrom).toBeNull();
     expect(apartment.isAvailable).toBe(true);
+    expect(apartment.images).toEqual([
+        'https://pictureis24-a.akamaihd.net/pic/orig04/N/557/756/903/557756903-0.jpg/ORIG/resize/1106x830%3E/format/jpg/quality/80',
+        'https://pictureis24-a.akamaihd.net/pic/orig03/N/557/756/910/557756910-0.jpg/ORIG/resize/1106x830%3E/format/jpg/quality/80',
+        'https://pictureis24-a.akamaihd.net/pic/orig03/N/557/756/814/557756814-0.jpg/ORIG/resize/1106x830%3E/format/jpg/quality/80',
+        'https://pictureis24-a.akamaihd.net/pic/orig02/N/557/756/833/557756833-0.jpg/ORIG/resize/1106x830%3E/format/jpg/quality/80',
+        'https://pictureis24-a.akamaihd.net/pic/orig02/N/557/756/873/557756873-0.jpg/ORIG/resize/1106x830%3E/format/jpg/quality/80',
+        'https://pictureis24-a.akamaihd.net/pic/orig03/N/531/272/498/531272498-0.jpg/ORIG/resize/1106x830%3E/format/jpg/quality/80',
+    ]);
 });
 
 it('scraps the apartment2.html', () => {
@@ -31,4 +39,5 @@ it('scraps the apartment2.html', () => {
     expect(apartment.city).toBe('Berlin');
     expect(apartment.availableFrom).toEqual(new Date('2017-04-01'));
     expect(apartment.isAvailable).toBe(false);
+    expect(apartment.images).toEqual([]);
 });

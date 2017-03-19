@@ -31,6 +31,13 @@ const scrapAddress = (addressBlock) => {
     return result;
 };
 
+const scrapImages = (sliderBlock) => {
+    if (!sliderBlock.length) {
+        return [];
+    }
+    return sliderBlock.find('img.sp-image').map((i, img) => img.attribs['data-src']).get();
+}
+
 const parseAvailableFrom = (text) => {
     if (text) {
         const dateRegex = /^\D+(\d{1,2}\.\d{1,2}\.\d{4})\s*$/.exec(text);
@@ -67,6 +74,7 @@ exports.scrap = (page) => {
     apartment.rentTotal = parsePrice($('.is24qa-gesamtmiete').text());
     apartment.area = parseArea($('.is24qa-wohnflaeche-ca').text().replace(',', '.'));
     apartment.rooms = parseInt($('.is24qa-zi').text(), 10);
+    apartment.images = scrapImages($('#slideImageContainer'));
 
     const availability = parseAvailableFrom($('.is24qa-bezugsfrei-ab').text());
     apartment = Object.assign(apartment, availability);

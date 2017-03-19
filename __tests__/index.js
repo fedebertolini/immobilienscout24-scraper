@@ -24,6 +24,7 @@ it('scraps the first page of the Berlin apartment list and its apartments', () =
             expect(apartment.rooms).toBeGreaterThan(0);
             expect(apartment.postalCode).toBeTruthy();
             expect(apartment.city).toBe('Berlin');
+            expect(apartment.images.length).toBeGreaterThan(0);
         });
     });
 });
